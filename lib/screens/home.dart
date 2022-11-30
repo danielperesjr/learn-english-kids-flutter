@@ -34,6 +34,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         title: Text("Learn English"),
         bottom: TabBar(
+          indicatorWeight: 4.0,
+          indicatorColor: Colors.white,
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
           controller: _tabController,
           tabs: [
             Tab(
