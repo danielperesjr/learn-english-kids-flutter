@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class Numbers extends StatefulWidget {
@@ -8,6 +9,15 @@ class Numbers extends StatefulWidget {
 }
 
 class _NumbersState extends State<Numbers> {
+
+  AudioPlayer audioPlayer = AudioPlayer();
+
+  void playAudio(String audioName) async {
+    await audioPlayer.play(
+      AssetSource("audios/$audioName.mp3"),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -15,27 +25,27 @@ class _NumbersState extends State<Numbers> {
       childAspectRatio: MediaQuery.of(context).size.aspectRatio * 2,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("1"),
           child: Image.asset("assets/images/1.png"),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("2"),
           child: Image.asset("assets/images/2.png"),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("3"),
           child: Image.asset("assets/images/3.png"),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("4"),
           child: Image.asset("assets/images/4.png"),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("5"),
           child: Image.asset("assets/images/5.png"),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => playAudio("6"),
           child: Image.asset("assets/images/6.png"),
         ),
       ],
